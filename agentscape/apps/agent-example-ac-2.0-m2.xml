@@ -1,0 +1,5 @@
+<agentscape xmlns="http://www.agentscape.org/config">
+	<application>
+		<agent jar="/Users/Tirhakah/Desktop/cm50206pr/agentscape/2.0-m2/agents/agent-example-ac-2.0-m2.jar"/>
+	</application>
+</agentscape>
