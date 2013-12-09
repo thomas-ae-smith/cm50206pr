@@ -1,0 +1,11 @@
+[INFO ] SystemServiceModule:90 - No AGENT_SERVER_LANGUAGES limit supplied
+[INFO ] SystemServiceModule:90 - No AGENT_SERVER_LANGUAGES limit supplied
+[INFO ] ServiceRuntimeModule:134 - Starting service [org.iids.aos.directoryservice.DirectoryService]
+[INFO ] ServiceRuntimeModule:134 - Starting service [org.iids.aos.blackboardservice.BlackboardService]
+[INFO ] ServiceRuntimeModule:134 - Starting service [org.iids.aos.services.jms.ActiveMQJmsService]
+[INFO ] ServiceRuntimeModule:134 - Starting service [rover.RoverService]
+[INFO ] ServiceRuntimeModule:134 - Starting service [org.iids.aos.servlet.api.ServletService]
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent c77272e2-a9f0-47f1-bea2-088842d5788a on java agent server
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent 4c955aa2-3f91-4c7b-9c97-8d0b290432d5 on java agent server

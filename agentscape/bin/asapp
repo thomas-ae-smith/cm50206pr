@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# Start with some initialization
+
+EXEC=`basename $0`
+
+# Check if $AGENTSCAPE_HOME is defined
+
+if [ -z $AGENTSCAPE_HOME ]
+then
+  echo "AGENTSCAPE_HOME is not set"
+  exit 4
+fi
+
+# Find the library directory
+
+LIBDIR=$AGENTSCAPE_HOME/lib
+echo LIBDIR $LIBDIR
+
+# Check startup type (agentscape or asrun)
+
+if [ $EXEC = "agentscape" ]
+then
+  JAR=$LIBDIR/boot.jar
+fi
+
+if [ $EXEC = "asboot" ]
+then
+  JAR=$LIBDIR/boot.jar
+fi
+
+if [ $EXEC = "asrun" ]
+then
+  JAR=$LIBDIR/app.jar
+fi
+
+if [ $EXEC = "asapp" ]
+then
+  JAR=$LIBDIR/app.jar
+fi
+
+if [ "z$JAR" = "z" ]
+then
+  echo "Invalid executable name $EXEC"
+  exit 3
+fi
+
+# Determine the runtime directory (if defined)
+
+if [ -z $AGENTSCAPE_RUNTIME ]
+then
+  AGENTSCAPE_RUNTIME=$AGENTSCAPE_HOME
+fi
+
+# See if the executable JAR can be found
+
+if [ ! -f "$JAR" ]
+then
+  echo "File $JAR cannot be found"
+  exit
+fi
+
+# Check arguments: $1 is the definition (xml) and $2 is the location/host
+# TODO - for now this is handled by the respective executables
+
+# So, it is found - execute it
+
+java -jar $JAR $1 $2
+RESULT=$?

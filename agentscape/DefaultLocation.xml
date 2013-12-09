@@ -1,0 +1,14 @@
+<agentscape xmlns="http://www.agentscape.org/config">
+
+  <lookup host="lookup2.agentscape.org" port="80"/>
+  <location name="DefaultLocation">
+
+    <host name="Default" locationmanager="true">
+      <config>
+        <services>
+        </services>
+      </config>
+    </host>
+  </location>
+
+</agentscape>

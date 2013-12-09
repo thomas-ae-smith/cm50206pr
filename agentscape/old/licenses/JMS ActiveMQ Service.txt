@@ -1,0 +1,26 @@
+Information for installed component 'JMS ActiveMQ Service'::
+===========================================================
+
+This component is distributed under the following license(s):
+
+License: AgentScape License
+URL: http://www.agentscape.org/agentscape/agentscape2/LICENSE.txt
+
+
+Additional dependency licenses:
+==============================
+
+License: The Apache Software License, Version 2.0
+URL: http://www.apache.org/licenses/LICENSE-2.0.txt
+
+ - commons-net:commons-net (version 2.0)
+ - org.apache.activemq.protobuf:activemq-protobuf (version 1.0)
+ - org.apache.activemq:activeio-core (version 3.1.2)
+ - org.apache.activemq:activemq-core (version 5.3.0)
+ - org.apache.activemq:kahadb (version 5.3.0)
+ - org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec (version 1.0.1)
+ - org.apache.geronimo.specs:geronimo-jms_1.1_spec (version 1.1.1)
+ - org.springframework:spring-beans (version 2.5.6)
+ - org.springframework:spring-context (version 2.5.6)
+ - org.springframework:spring-core (version 2.5.6)
+

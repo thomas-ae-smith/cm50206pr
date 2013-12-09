@@ -1,0 +1,5 @@
+<agentscape xmlns="http://www.agentscape.org/config">
+  <application>
+    <agent jar="agents/agent-demo-migration-2.0-m4-SNAPSHOT.jar"/>
+  </application>
+</agentscape>

@@ -1,0 +1,30 @@
+License info for AgentScape 2.0-m2:
+==================================
+
+License: AgentScape License
+URL: http://www.agentscape.org/agentscape/agentscape2/LICENSE.txt
+
+
+
+
+Licenses for additional dependencies:
+====================================
+
+License: GNU Lesser General Public License 3.0
+URL: http://www.gnu.org/licenses/lgpl-3.0.txt
+
+ - org.acplt.oncrpc:oncrpc (version 1.0.5-mt)
+
+License: Bouncy Castle License
+URL: http://www.bouncycastle.org/licence.html
+
+ - bouncycastle:bcprov-jdk15 (version 140)
+
+License: The Apache Software License, Version 2.0
+URL: http://www.apache.org/licenses/LICENSE-2.0.txt
+
+ - commons-codec:commons-codec (version 1.4)
+ - commons-lang:commons-lang (version 2.4)
+ - commons-logging:commons-logging (version 1.1.1)
+ - log4j:log4j (version 1.2.16)
+
