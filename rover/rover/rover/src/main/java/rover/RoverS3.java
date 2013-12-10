@@ -13,8 +13,8 @@ import org.iids.aos.systemservices.communicator.structs.AgentHandle;
 public class RoverS3 extends Rover {
 
 	// constant max values for this scenario
-	private static final int SPEED = 2;
-	private static final int SCAN = 2;
+	private static final int SPEED = 1;
+	private static final int SCAN = 3;
 	private static final int LOAD = 5;
 
 	// possible states for the FSM
