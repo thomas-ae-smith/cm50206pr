@@ -6,6 +6,6 @@
 [INFO ] ServiceRuntimeModule:134 - Starting service [rover.RoverService]
 [INFO ] ServiceRuntimeModule:134 - Starting service [org.iids.aos.servlet.api.ServletService]
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent c77272e2-a9f0-47f1-bea2-088842d5788a on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent ff0a5c59-3152-45e9-bc3f-a1486e8d8a62 on java agent server
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent 4c955aa2-3f91-4c7b-9c97-8d0b290432d5 on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent 032f419a-4622-44a0-a384-e6eb81ef7978 on java agent server

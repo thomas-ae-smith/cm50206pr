@@ -11,7 +11,7 @@ public class TestRover extends Rover {
 		Log.console("TestRover start");
 		
 		//use your username for team name
-		setTeam("tom");
+		setTeam("taes22");
 		
 		try {
 			//set attributes for this rover
