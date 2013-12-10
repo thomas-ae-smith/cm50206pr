@@ -56,7 +56,7 @@ public class RoverServiceImpl extends AbstractDefaultService implements
 		
 		//monitors = new ArrayList<RoverMonitor>();
 		
-		resetWorld(4);
+		resetWorld(5);
 	}
 	
 	@Override
