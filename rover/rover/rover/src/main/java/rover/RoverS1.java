@@ -1,7 +1,5 @@
 package rover;
 
-import java.util.Random;
-
 import org.iids.aos.log.Log;
 
 

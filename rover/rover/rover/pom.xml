@@ -63,7 +63,7 @@
       <configuration>
         <archive>
           <manifest>
-            <mainClass>rover.RoverS1</mainClass>
+            <mainClass>rover.RoverS2</mainClass>
             <addClasspath>true</addClasspath>
           </manifest>
         </archive>
