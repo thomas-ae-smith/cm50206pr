@@ -6,14 +6,24 @@
 [INFO ] ServiceRuntimeModule:134 - Starting service [rover.RoverService]
 [INFO ] ServiceRuntimeModule:134 - Starting service [org.iids.aos.servlet.api.ServletService]
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent 7ca67808-a7d5-45d8-a1ff-5d93f4cf5b6a on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent 2644bde7-b907-4af8-9f19-3161c51b144e on java agent server
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent eb0163b9-aac9-48b0-8cfd-eb8970b1990a on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent 6cf656e7-5da1-4976-9020-527e9a2ce1d1 on java agent server
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent 904d7c2e-dcd7-4aa0-a2b0-81c64fb9b140 on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent 83bbd873-8484-43bb-a241-3ade1b794b01 on java agent server
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent 7564ac4c-98c1-4f39-b144-5852fb26bad4 on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent 2d285ca1-d4e3-4741-a8c6-dd54ea8b0776 on java agent server
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent a3a214b9-e27c-4a59-85db-0ecf553334b9 on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent c3d7b73b-dd4f-4be3-92f8-6ab51b4f3bea on java agent server
 [INFO ] AgentManagementModule:113 - insert agent called at locationmanager
-[INFO ] JavaAgentRunner:297 - Starting agent a550e13e-45d1-42bd-a8de-caccd32660b9 on java agent server
+[INFO ] JavaAgentRunner:297 - Starting agent 8ab31e9f-e89d-4d2f-99b5-eaa48cf3926a on java agent server
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent f5a20277-6789-4c4c-b4f3-01fc84c7be62 on java agent server
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent eb39b611-f9c9-4d21-b9ca-d18db009b8ba on java agent server
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent 27cf2a4e-3282-4874-a8f6-1248a74962be on java agent server
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent d870fb50-b51c-4627-92ed-7bba98a70b83 on java agent server
+[INFO ] AgentManagementModule:113 - insert agent called at locationmanager
+[INFO ] JavaAgentRunner:297 - Starting agent 114301ad-cad7-4491-8b3d-209d0e8485a0 on java agent server

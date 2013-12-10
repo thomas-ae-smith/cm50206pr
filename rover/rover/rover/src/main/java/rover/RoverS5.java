@@ -17,8 +17,8 @@ import org.iids.aos.systemservices.communicator.structs.AgentHandle;
 public class RoverS5 extends Rover {
 
 	// constant max values for this scenario
-	private static final int SPEED = 4;
-	private static final int SCAN = 4;
+	private static final int SPEED = 3;
+	private static final int SCAN = 5;
 	private static final int LOAD = 1;
 
 
@@ -132,6 +132,7 @@ public class RoverS5 extends Rover {
 		
 		if(pr.getResultStatus() == PollResult.FAILED) {
 			Log.console("Ran out of power...");
+			send(AVAILABLE + ",false");
 			if (!handles.isEmpty()) {
 				sendOne(BEQUEATH + "," + rank + "," + hour + "," + minute, handles.get(new Random().nextInt(handles.size())));
 			}
@@ -302,7 +303,11 @@ public class RoverS5 extends Rover {
 
 		if (Math.abs(targetX.peek()) > 0.6 * getWorldWidth() || Math.abs(targetY.peek()) > 0.6 * getWorldHeight()) {
 			Log.console("Skipping overlapped patrol node.");
-			getNextPatrolPoint();
+			try {
+				getNextPatrolPoint();
+			} catch (Exception e) {
+				rank = 0;
+			}
 		}
 		// Log.console("It's day " + rank + " at " + hour + ":" + minute + "; going to " + targetX + ", " + targetY);
 	}
@@ -352,7 +357,7 @@ public class RoverS5 extends Rover {
 					handles.add((AgentHandle) record.getValue("handle"));
 				}
 				
-			} catch (QuerySyntaxException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 				return;
 			}
@@ -432,7 +437,9 @@ public class RoverS5 extends Rover {
 							rank = Integer.parseInt(bits[1]);
 							hour = Integer.parseInt(bits[2]);
 							minute = Integer.parseInt(bits[3]);
-							getNextPatrolPoint();
+							if (targetX.empty()) {
+								getNextPatrolPoint();
+							}
 						}
 
 					}
@@ -455,7 +462,7 @@ public class RoverS5 extends Rover {
 				Log.console("I'm going for it " + id);
 				state = (rank == 0)? RESCUE : PATROL;
 				scout = (rank == 0)? false : true;
-				send(AVAILABLE + ",false");
+				// send(AVAILABLE + ",false");
 				try {
 					// Log.console("Moving...");
 					gotoTarget();
