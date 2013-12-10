@@ -1,9 +1,11 @@
 package rover;
 
+import java.util.Random;
+
 import org.iids.aos.log.Log;
 
 
-public class RoverS1scan extends Rover {
+public class RoverS2 extends Rover {
 
 	// constant max values for this scenario
 	private static final int SPEED = 1;
@@ -35,8 +37,8 @@ public class RoverS1scan extends Rover {
 	private static final int HOURMAX = 6;	//the maximum number of sides
 	private static final int HOURSTEP = 6;	//the number of sides to cover before incrementing rank
 
-	public RoverS1scan() {
-		Log.console("RoverS1scan start");
+	public RoverS2() {
+		Log.console("RoverS2 start");
 		
 		//username for team name
 		setTeam("taes22");
@@ -109,12 +111,32 @@ public class RoverS1scan extends Rover {
 			//move finished
 			Log.console(STATES[state] + " move complete.");
 			
-			//now scan
-			try {
-				Log.console("Scanning...");
-				scan((state == PATROL)? SCAN : 1);	//full scan if patrolling, narrow otherwise
-			} catch (Exception e) {
-				e.printStackTrace();
+			switch(state) {
+				case PATROL:
+					//now scan
+					try {
+						Log.console("Scanning...");
+						scan(SCAN);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					break;
+				case RETURN:
+					try {
+						Log.console("Depositing...");
+						deposit();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					break;
+				case RESCUE:
+					try {
+						Log.console("Collecting...");
+						collect();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					break;
 			}
 			
 			break;
@@ -124,57 +146,22 @@ public class RoverS1scan extends Rover {
 
 			//temp variable for if we find something
 			ScanItem si = null;
-			//if we're on the hunt for a resource
-			if (state == PATROL || state == RESCUE) {
-				for(ScanItem item : pr.getScanItems()) {
-					if(item.getItemType() == ScanItem.RESOURCE) {
-						Log.console("Resource found at: " + item.getxOffset() + ", " + item.getyOffset());
-						//store reference to the found resource
-						si = item;
-						//store offset relative to home
-						targetX = item.getxOffset() - homeX;
-						targetY = item.getyOffset() - homeY;
-						//switch into rescue mode and cease scanning (in scenario #1)
-						state = RESCUE;
-						break;
-					}
-				}
-				//if we didn't find anything
-				if (si == null) {
-					getNextPatrolPoint();
+			for(ScanItem item : pr.getScanItems()) {
+				if(item.getItemType() == ScanItem.RESOURCE) {
+					Log.console("Resource found at: " + item.getxOffset() + ", " + item.getyOffset());
+					//store reference to the found resource
+					si = item;
+					//store offset relative to home
+					// targetX = item.getxOffset() - homeX;
+					// targetY = item.getyOffset() - homeY;
+					//switch into rescue mode and cease scanning (in scenario #1)
+					state = RESCUE;
+					break;
 				}
 			}
-			//if there should be a resource nearby
-			if (state == RESCUE && si != null) {
-				//check if it's worth trying to collect
-				if (Math.sqrt(si.getxOffset() * si.getxOffset() + si.getyOffset() * si.getyOffset()) < .1) {
-					try {
-						Log.console("Collecting...");
-						collect();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					break;
-				}
-			} else if (state == RETURN) {	//if we should be close to home
-				for(ScanItem item : pr.getScanItems()) {
-					//locate the base
-					if(item.getItemType() == ScanItem.BASE) {
-						Log.console("Base found at: " + item.getxOffset() + ", " + item.getyOffset());
-						si = item;
-						break;
-					}
-				}
-				//check if it's worth trying to deposit
-				if (Math.sqrt(si.getxOffset() * si.getxOffset() + si.getyOffset() * si.getyOffset()) < .1) {
-					try {
-						Log.console("Depositing...");
-						deposit();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					break;
-				}
+			//if we didn't find anything
+			if (si == null) {
+				getNextPatrolPoint();
 			}
 
 			//go to the found item if extant, or the target otherwise
@@ -218,15 +205,15 @@ public class RoverS1scan extends Rover {
 					deposit();
 				} catch (Exception e) {
 					e.printStackTrace();
-					state = RESCUE;
+					state = PATROL;
 				}
 			} else {
-				state = RESCUE;
+				state = PATROL;
 			}
 			
-			if (state == RESCUE) {
+			if (state == PATROL) {
 				try {
-					Log.console("Rescuing more...");
+					Log.console("Patrolling more...");
 					//(we should already be at home, here, but just in case add the home offset...)
 					gotoXY(homeX+targetX, homeY+targetY);
 				} catch (Exception e) {
@@ -256,9 +243,7 @@ public class RoverS1scan extends Rover {
 				rank += 1;
 			}
 		}
-		// targetX = rank * PATHX[hour];
 		targetX = rank * PATHX[hour] + minute * PATHX[(hour+2)%HOURMAX];
-		// targetY = rank * PATHY[hour];
 		targetY = rank * PATHY[hour] + minute * PATHY[(hour+2)%HOURMAX];
 		// Log.console("It's day " + rank + " at " + hour + ":" + minute + "; going to " + targetX + ", " + targetY);
 
