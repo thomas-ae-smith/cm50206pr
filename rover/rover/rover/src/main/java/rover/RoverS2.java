@@ -137,6 +137,18 @@ public class RoverS2 extends Rover {
 						collect();
 					} catch (Exception e) {
 						e.printStackTrace();
+						if (targetX.empty()) {
+							getNextPatrolPoint();
+							state = PATROL;
+						} else {
+							state = RESCUE;
+						}
+						try {
+							Log.console("Moving...");
+							gotoTarget();
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
 					}
 					break;
 			}
